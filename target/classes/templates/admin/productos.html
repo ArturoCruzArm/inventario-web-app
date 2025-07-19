@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Gestión de Productos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+    <div th:replace="fragments/navbar :: navbar"></div>
     <h1>Gestión de Productos</h1>
     <a href="/admin/productos/nuevo">Registrar Nuevo Producto</a>
     <table border="1">
@@ -25,17 +27,19 @@
                 <td th:text="${producto.cantidad}"></td>
                 <td th:text="${producto.activo ? 'Activo' : 'De baja'}"></td>
                 <td>
-                    <form th:action="@{/admin/productos/baja/{id}(id=${producto.id})}" method="post" style="display:inline;">
-                        <button type="submit" th:if="${producto.activo}">Dar de Baja</button>
-                    </form>
-                    <form th:action="@{/admin/productos/reactivar/{id}(id=${producto.id})}" method="post" style="display:inline;">
-                        <button type="submit" th:unless="${producto.activo}">Reactivar</button>
-                    </form>
-                    <form th:action="@{/admin/productos/stock/agregar}" method="post" style="display:inline;">
-                        <input type="hidden" name="id" th:value="${producto.id}"/>
-                        <input type="number" name="cantidad" min="1" required/>
-                        <button type="submit">Agregar Stock</button>
-                    </form>
+                    <div class="action-group">
+                        <form th:action="@{/admin/productos/baja/{id}(id=${producto.id})}" method="post">
+                            <button type="submit" th:if="${producto.activo}">Dar de Baja</button>
+                        </form>
+                        <form th:action="@{/admin/productos/reactivar/{id}(id=${producto.id})}" method="post">
+                            <button type="submit" th:unless="${producto.activo}">Reactivar</button>
+                        </form>
+                        <form th:action="@{/admin/productos/stock/agregar}" method="post">
+                            <input type="hidden" name="id" th:value="${producto.id}"/>
+                            <input type="number" name="cantidad" min="1" required/>
+                            <button type="submit">Agregar Stock</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         </tbody>

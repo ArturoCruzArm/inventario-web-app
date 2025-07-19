@@ -18,3 +18,4 @@ com\inventario\inventariowebapp\repository\RolRepository.class
 com\inventario\inventariowebapp\model\Usuario.class
 com\inventario\inventariowebapp\service\ProductoService.class
 com\inventario\inventariowebapp\controller\HomeController.class
+com\inventario\inventariowebapp\controller\AccessDeniedController.class

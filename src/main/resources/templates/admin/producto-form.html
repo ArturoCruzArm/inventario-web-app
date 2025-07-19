@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulario de Producto</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+    <div th:replace="fragments/navbar :: navbar"></div>
     <h1>Formulario de Producto</h1>
     <form th:action="@{/admin/productos/guardar}" th:object="${producto}" method="post">
         <input type="hidden" th:field="*{id}"/>

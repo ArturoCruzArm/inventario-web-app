@@ -1,5 +1,6 @@
 C:\inventario-web-app\src\main\java\com\inventario\inventariowebapp\config\DataInitializer.java
 C:\inventario-web-app\src\main\java\com\inventario\inventariowebapp\config\SecurityConfig.java
+C:\inventario-web-app\src\main\java\com\inventario\inventariowebapp\controller\AccessDeniedController.java
 C:\inventario-web-app\src\main\java\com\inventario\inventariowebapp\controller\AdminController.java
 C:\inventario-web-app\src\main\java\com\inventario\inventariowebapp\controller\AlmacenController.java
 C:\inventario-web-app\src\main\java\com\inventario\inventariowebapp\controller\HomeController.java

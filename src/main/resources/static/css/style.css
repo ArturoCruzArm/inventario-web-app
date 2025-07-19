@@ -1,0 +1,156 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background-color: #007bff;
+    overflow: hidden;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.navbar .logout {
+    float: right;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+table th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e2e6ea;
+}
+
+form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form input[type="datetime-local"],
+form textarea,
+form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"],
+form button[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+form button[type="submit"]:hover,
+form button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.action-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Espacio entre los elementos */
+    align-items: center;
+}
+
+.action-group form {
+    margin: 0; /* Eliminar el margen superior/inferior del formulario */
+    padding: 0; /* Eliminar el padding del formulario */
+    background-color: transparent; /* Hacer el fondo transparente */
+    box-shadow: none; /* Eliminar la sombra */
+}
+
+.action-group form input[type="number"] {
+    width: 60px; /* Ajustar el ancho del input de cantidad */
+    margin-right: 5px;
+}
