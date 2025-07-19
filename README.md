@@ -21,10 +21,8 @@ Sigue estos pasos para configurar y ejecutar la aplicación en tu entorno local:
 
 2.  **Configurar la Base de Datos MySQL:**
     *   Asegúrate de tener un servidor MySQL 8.0 (o superior) en ejecución.
-    *   Crea una base de datos llamada `inventario_db`.
-    *   Ejecuta los scripts SQL ubicados en la carpeta `SCRIPTS` en el siguiente orden:
-        1.  `V1__create_tables.sql`: Crea las tablas necesarias.
-        2.  `V2__insert_initial_data.sql`: Inserta los roles y usuarios iniciales (admin/admin123, almacen/almacen123).
+    *   Ejecuta el scripts SQL ubicado en la carpeta `SCRIPTS`:
+        1.  `full_setup.sql`: Crea las tablas necesarias y las llena.
 
 3.  **Configurar las Propiedades de Conexión a la Base de Datos:**
     *   Abre el archivo `src/main/resources/application.properties`.
