@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Historial de Inventario</title>
+</head>
+<body>
+    <h1>Historial de Inventario</h1>
+
+    <form th:action="@{/admin/historial}" method="get">
+        <div>
+            <label for="productoId">Filtrar por Producto:</label>
+            <select id="productoId" name="productoId">
+                <option value="">-- Seleccione un Producto --</option>
+                <option th:each="prod : ${productos}" th:value="${prod.id}" th:text="${prod.nombre}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="fechaInicio">Fecha Inicio:</label>
+            <input type="datetime-local" id="fechaInicio" name="fechaInicio"/>
+        </div>
+        <div>
+            <label for="fechaFin">Fecha Fin:</label>
+            <input type="datetime-local" id="fechaFin" name="fechaFin"/>
+        </div>
+        <button type="submit">Filtrar</button>
+        <button type="button" onclick="window.location.href='/admin/historial'">Limpiar Filtros</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Transacción</th>
+                <th>Producto</th>
+                <th>Usuario</th>
+                <th>Tipo de Transacción</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="h : ${historial}">
+                <td th:text="${h.id}"></td>
+                <td th:text="${h.producto.nombre}"></td>
+                <td th:text="${h.usuario.username}"></td>
+                <td th:text="${h.tipoTransaccion}"></td>
+                <td th:text="${h.cantidad}"></td>
+                <td th:text="${#temporals.format(h.fechaTransaccion, 'dd-MM-yyyy HH:mm:ss')}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

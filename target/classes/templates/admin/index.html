@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Panel de Administrador</title>
+</head>
+<body>
+    <h1>Bienvenido, Administrador</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/admin/productos}">Gestión de Productos</a></li>
+            <li><a th:href="@{/admin/historial}">Ver Historial de Inventario</a></li>
+        </ul>
+    </nav>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+</body>
+</html>

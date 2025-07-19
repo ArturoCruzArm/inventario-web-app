@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inventario</title>
+</head>
+<body>
+    <h1>Inventario</h1>
+    <div th:if="${error}">
+        <p style="color:red;" th:text="${error}"></p>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="producto : ${productos}" th:if="${producto.activo}">
+                <td th:text="${producto.id}"></td>
+                <td th:text="${producto.nombre}"></td>
+                <td th:text="${producto.descripcion}"></td>
+                <td th:text="${producto.cantidad}"></td>
+                <td>
+                    <form th:action="@{/almacen/inventario/salida}" method="post">
+                        <input type="hidden" name="id" th:value="${producto.id}"/>
+                        <input type="number" name="cantidad" min="1" th:max="${producto.cantidad}" required/>
+                        <button type="submit">Sacar Material</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

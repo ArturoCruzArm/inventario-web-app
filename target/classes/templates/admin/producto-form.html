@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Producto</title>
+</head>
+<body>
+    <h1>Formulario de Producto</h1>
+    <form th:action="@{/admin/productos/guardar}" th:object="${producto}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Nombre:</label>
+            <input type="text" th:field="*{nombre}"/>
+        </div>
+        <div>
+            <label>Descripción:</label>
+            <textarea th:field="*{descripcion}"></textarea>
+        </div>
+        <div>
+            <label>Cantidad:</label>
+            <input type="number" th:field="*{cantidad}"/>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

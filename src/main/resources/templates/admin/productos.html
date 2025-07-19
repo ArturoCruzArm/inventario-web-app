@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Productos</title>
+</head>
+<body>
+    <h1>Gestión de Productos</h1>
+    <a href="/admin/productos/nuevo">Registrar Nuevo Producto</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="producto : ${productos}">
+                <td th:text="${producto.id}"></td>
+                <td th:text="${producto.nombre}"></td>
+                <td th:text="${producto.descripcion}"></td>
+                <td th:text="${producto.cantidad}"></td>
+                <td th:text="${producto.activo ? 'Activo' : 'De baja'}"></td>
+                <td>
+                    <form th:action="@{/admin/productos/baja/{id}(id=${producto.id})}" method="post" style="display:inline;">
+                        <button type="submit" th:if="${producto.activo}">Dar de Baja</button>
+                    </form>
+                    <form th:action="@{/admin/productos/reactivar/{id}(id=${producto.id})}" method="post" style="display:inline;">
+                        <button type="submit" th:unless="${producto.activo}">Reactivar</button>
+                    </form>
+                    <form th:action="@{/admin/productos/stock/agregar}" method="post" style="display:inline;">
+                        <input type="hidden" name="id" th:value="${producto.id}"/>
+                        <input type="number" name="cantidad" min="1" required/>
+                        <button type="submit">Agregar Stock</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
