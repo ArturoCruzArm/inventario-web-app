@@ -50,4 +50,4 @@ Sigue estos pasos para configurar y ejecutar la aplicación en tu entorno local:
 
 *   `SCRIPTS/`: Contiene los scripts SQL para la base de datos.
 *   `src/`: Contiene el código fuente de la aplicación Java.
-*   `README.md`: Este archivo, con la documentación del proyecto.
+*   `README.md`: Este archivo, con la documentación del proyecto.# Sistema de Inventario Web - Versión Final
