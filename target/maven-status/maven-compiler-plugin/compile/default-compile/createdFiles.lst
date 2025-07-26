@@ -10,6 +10,7 @@ controller\LoginServlet.class
 com\inventario\inventariowebapp\repository\HistorialInventarioRepository.class
 com\inventario\inventariowebapp\controller\AlmacenController.class
 model\Producto.class
+com\inventario\inventariowebapp\util\PasswordGenerator.class
 com\inventario\inventariowebapp\config\DataInitializer.class
 com\inventario\inventariowebapp\InventarioWebAppApplication.class
 com\inventario\inventariowebapp\controller\LoginController.class

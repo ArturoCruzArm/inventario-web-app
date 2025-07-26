@@ -37,24 +37,20 @@ public class DataInitializer implements CommandLineRunner {
             return rolRepository.save(newRol);
         });
 
-        // Crear usuario admin si no existe
-        if (usuarioRepository.findByUsername("admin").isEmpty()) {
-            Usuario admin = new Usuario();
-            admin.setUsername("admin");
-            admin.setPassword(passwordEncoder.encode("admin123")); // Contraseña codificada
-            admin.setRol(adminRol);
-            admin.setActivo(true);
-            usuarioRepository.save(admin);
-        }
+        // Actualizar usuario admin
+        Usuario admin = usuarioRepository.findByUsername("admin").orElse(new Usuario());
+        admin.setUsername("admin");
+        admin.setPassword(passwordEncoder.encode("password")); // Contraseña codificada
+        admin.setRol(adminRol);
+        admin.setActivo(true);
+        usuarioRepository.save(admin);
 
-        // Crear usuario almacen si no existe
-        if (usuarioRepository.findByUsername("almacen").isEmpty()) {
-            Usuario almacen = new Usuario();
-            almacen.setUsername("almacen");
-            almacen.setPassword(passwordEncoder.encode("almacen123")); // Contraseña codificada
-            almacen.setRol(almacenistaRol);
-            almacen.setActivo(true);
-            usuarioRepository.save(almacen);
-        }
+        // Actualizar usuario almacen
+        Usuario almacen = usuarioRepository.findByUsername("almacen").orElse(new Usuario());
+        almacen.setUsername("almacen");
+        almacen.setPassword(passwordEncoder.encode("password")); // Contraseña codificada
+        almacen.setRol(almacenistaRol);
+        almacen.setActivo(true);
+        usuarioRepository.save(almacen);
     }
 }
